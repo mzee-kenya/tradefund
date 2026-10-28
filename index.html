@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>TradeFund — Trading Challenge Prototype</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="app-shell">
+    <aside class="sidebar" id="sidebar">
+      <a class="brand" href="#" aria-label="TradeFund home">
+        <span class="brand-mark">↗</span><span>Trade<span class="brand-light">Fund</span></span>
+      </a>
+      <div class="side-label">WORKSPACE</div>
+      <nav class="nav-menu">
+        <button class="nav-item active" data-page="dashboard"><span>▦</span> Dashboard</button>
+        <button class="nav-item" data-page="challenges"><span>◈</span> Challenges</button>
+        <button class="nav-item" data-page="account"><span>⌁</span> Trading account</button>
+        <button class="nav-item" data-page="payments"><span>▤</span> Payments</button>
+        <button class="nav-item" data-page="rules"><span>✓</span> Rules & requirements</button>
+      </nav>
+      <div class="side-label side-label-bottom">ACCOUNT</div>
+      <nav class="nav-menu">
+        <button class="nav-item" data-page="profile"><span>◎</span> My profile</button>
+        <button class="nav-item" data-page="support"><span>◌</span> Help & support</button>
+      </nav>
+      <div class="sidebar-bottom">
+        <div class="secure-icon">✓</div>
+        <div><strong>Your goals. Your growth.</strong><p>Trade responsibly and follow your plan.</p></div>
+      </div>
+    </aside>
+
+    <main class="main-area">
+      <header class="topbar">
+        <button class="mobile-menu" id="mobileMenu" aria-label="Toggle navigation">☰</button>
+        <div class="breadcrumb">Workspace <span>/</span> <strong id="pageCrumb">Dashboard</strong></div>
+        <div class="top-actions">
+          <button class="icon-button" aria-label="Notifications">♧<i></i></button>
+          <div class="user-chip"><div class="avatar">JD</div><div><strong>John Doe</strong><small>Trader account</small></div><span class="chevron">⌄</span></div>
+        </div>
+      </header>
+
+      <section class="page active" id="page-dashboard">
+        <div class="welcome-row">
+          <div><p class="eyebrow">TUESDAY, OCTOBER 28, 2026</p><h1>Good afternoon, John <span>✦</span></h1><p class="muted">Here's your trading performance at a glance.</p></div>
+          <button class="primary-button" data-goto="challenges">＋ Explore challenges</button>
+        </div>
+        <div class="notice"><span class="notice-icon">i</span><div><strong>Keep your strategy consistent</strong><p>Stay within your daily loss limit and review your progress before your next session.</p></div><button class="notice-close" aria-label="Dismiss notice">×</button></div>
+        <div class="stats-grid">
+          <article class="stat-card"><div class="stat-top"><span>Account balance</span><span class="stat-icon blue">＄</span></div><h2>$10,487.00</h2><p class="positive">↗ $487.00 <span>+4.87% overall</span></p></article>
+          <article class="stat-card"><div class="stat-top"><span>Current equity</span><span class="stat-icon purple">⌁</span></div><h2>$10,612.00</h2><p class="positive">↗ $125.00 <span>today</span></p></article>
+          <article class="stat-card"><div class="stat-top"><span>Profit target</span><span class="stat-icon orange">◎</span></div><h2>8.0%</h2><p class="muted-small">Target: $800 profit</p><div class="mini-progress"><span style="width:61%"></span></div><p class="progress-label">61% of target reached</p></article>
+          <article class="stat-card"><div class="stat-top"><span>Maximum drawdown</span><span class="stat-icon green">⌁</span></div><h2>2.3%</h2><p class="positive">Within limit <span>10% maximum</span></p></article>
+        </div>
+        <div class="content-grid">
+          <article class="panel performance-panel">
+            <div class="panel-heading"><div><h3>Account performance</h3><p class="muted">Your simulated equity over the last 7 days</p></div><select id="chartRange" aria-label="Chart range"><option>Last 7 days</option><option>Last 30 days</option></select></div>
+            <div class="chart-legend"><span><i class="legend-blue"></i> Equity</span><span><i class="legend-gray"></i> Starting balance</span></div>
+            <div class="chart-wrap"><svg viewBox="0 0 680 230" preserveAspectRatio="none" role="img" aria-label="Rising equity chart"><defs><linearGradient id="areaFill" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#2878f0" stop-opacity=".2"/><stop offset="100%" stop-color="#2878f0" stop-opacity="0"/></linearGradient></defs><g class="grid-lines"><line x1="45" y1="25" x2="670" y2="25"/><line x1="45" y1="75" x2="670" y2="75"/><line x1="45" y1="125" x2="670" y2="125"/><line x1="45" y1="175" x2="670" y2="175"/><line x1="45" y1="215" x2="670" y2="215"/></g><g class="axis-labels"><text x="0" y="29">$10.8k</text><text x="0" y="79">$10.6k</text><text x="0" y="129">$10.4k</text><text x="0" y="179">$10.2k</text><text x="0" y="219">$10k</text></g><path class="chart-area" d="M45 205 L100 190 L155 198 L210 158 L265 169 L320 130 L375 143 L430 105 L485 117 L540 78 L595 88 L650 42 L650 215 L45 215 Z"/><path class="chart-line" d="M45 205 L100 190 L155 198 L210 158 L265 169 L320 130 L375 143 L430 105 L485 117 L540 78 L595 88 L650 42"/><circle cx="650" cy="42" r="5" class="chart-dot"/><g class="axis-bottom"><text x="45" y="229">Oct 22</text><text x="240" y="229">Oct 24</text><text x="435" y="229">Oct 26</text><text x="610" y="229">Oct 28</text></g></svg></div>
+          </article>
+          <article class="panel progress-panel">
+            <div class="panel-heading"><div><h3>Challenge progress</h3><p class="muted">Starter · $10,000 account</p></div><span class="status-pill status-blue">In progress</span></div>
+            <div class="target-row"><div><span class="muted-small">Profit target</span><strong>$800.00</strong></div><div class="target-value">+$487.00 <span>61%</span></div></div>
+            <div class="progress-track"><span style="width:61%"></span></div>
+            <div class="metric-list"><div><span>Trading days</span><strong>2 / 5</strong></div><div><span>Daily loss used</span><strong>1.2% / 5%</strong></div><div><span>Max drawdown</span><strong>2.3% / 10%</strong></div></div>
+            <button class="outline-button full-button" data-goto="account">View trading account →</button>
+          </article>
+        </div>
+        <article class="panel trades-panel">
+          <div class="panel-heading"><div><h3>Recent trades</h3><p class="muted">A preview of your latest activity</p></div><button class="text-button" data-goto="account">View all trades →</button></div>
+          <div class="table-scroll"><table><thead><tr><th>Instrument</th><th>Type</th><th>Open price</th><th>Close price</th><th>Profit / loss</th><th>Status</th></tr></thead><tbody><tr><td><strong>XAUUSD</strong><small>Gold vs US Dollar</small></td><td><span class="trade-buy">Buy</span></td><td>2,645.00</td><td>2,668.50</td><td class="positive">+$125.00</td><td><span class="status-pill status-green">Closed</span></td></tr><tr><td><strong>EURUSD</strong><small>Euro vs US Dollar</small></td><td><span class="trade-sell">Sell</span></td><td>1.0820</td><td>1.0805</td><td class="positive">+$45.00</td><td><span class="status-pill status-green">Closed</span></td></tr><tr><td><strong>GBPUSD</strong><small>British Pound vs US Dollar</small></td><td><span class="trade-buy">Buy</span></td><td>1.2910</td><td>1.2888</td><td class="negative">−$32.10</td><td><span class="status-pill status-green">Closed</span></td></tr></tbody></table></div>
+        </article>
+        <p class="prototype-note">Prototype preview · Trading figures are illustrative and are not connected to a live broker.</p>
+      </section>
+
+      <section class="page" id="page-challenges">
+        <div class="page-heading"><div><p class="eyebrow">FIND YOUR STARTING POINT</p><h1>Choose your challenge</h1><p class="muted">Select a plan, understand the rules, and start your evaluation.</p></div></div>
+        <div class="challenge-grid">
+          <article class="challenge-card"><span class="plan-label">STARTER</span><h2>$10,000</h2><p class="muted">Simulated account size</p><div class="fee">$49 <small>one-time fee</small></div><ul><li>8% profit target</li><li>5% daily loss limit</li><li>10% maximum drawdown</li><li>5 minimum trading days</li></ul><button class="outline-button choose-plan" data-plan="Starter" data-fee="$49">Choose Starter</button></article>
+          <article class="challenge-card featured"><span class="popular-tag">MOST POPULAR</span><span class="plan-label">PRO</span><h2>$25,000</h2><p class="muted">Simulated account size</p><div class="fee">$99 <small>one-time fee</small></div><ul><li>8% profit target</li><li>5% daily loss limit</li><li>10% maximum drawdown</li><li>5 minimum trading days</li></ul><button class="primary-button choose-plan" data-plan="Pro" data-fee="$99">Choose Pro</button></article>
+          <article class="challenge-card"><span class="plan-label">ELITE</span><h2>$50,000</h2><p class="muted">Simulated account size</p><div class="fee">$199 <small>one-time fee</small></div><ul><li>8% profit target</li><li>5% daily loss limit</li><li>10% maximum drawdown</li><li>5 minimum trading days</li></ul><button class="outline-button choose-plan" data-plan="Elite" data-fee="$199">Choose Elite</button></article>
+        </div>
+        <div class="notice"><span class="notice-icon">i</span><div><strong>Know the rules before you begin</strong><p>Challenge prices and requirements are sample values for this prototype. Confirm all terms with the firm before launch.</p></div></div>
+      </section>
+
+      <section class="page" id="page-account">
+        <div class="page-heading"><div><p class="eyebrow">YOUR PERFORMANCE</p><h1>Trading account</h1><p class="muted">Track your simulated trading activity and challenge limits.</p></div><span class="status-pill status-green">● Active</span></div>
+        <div class="stats-grid three-stats"><article class="stat-card"><div class="stat-top"><span>Balance</span><span class="stat-icon blue">＄</span></div><h2>$10,487.00</h2><p class="muted-small">Starting balance $10,000</p></article><article class="stat-card"><div class="stat-top"><span>Equity</span><span class="stat-icon purple">⌁</span></div><h2>$10,612.00</h2><p class="positive">+$612.00 floating included</p></article><article class="stat-card"><div class="stat-top"><span>Open positions</span><span class="stat-icon orange">⌁</span></div><h2>2</h2><p class="muted-small">Illustrative data</p></article></div>
+        <article class="panel"><div class="panel-heading"><div><h3>Trade history</h3><p class="muted">Recent simulated account activity</p></div><span class="status-pill status-blue">Demo data</span></div><div class="table-scroll"><table><thead><tr><th>Instrument</th><th>Direction</th><th>Volume</th><th>Entry</th><th>Exit</th><th>P/L</th></tr></thead><tbody><tr><td>XAUUSD</td><td>Buy</td><td>0.10</td><td>2,645.00</td><td>2,668.50</td><td class="positive">+$125.00</td></tr><tr><td>EURUSD</td><td>Sell</td><td>0.05</td><td>1.0820</td><td>1.0805</td><td class="positive">+$45.00</td></tr><tr><td>GBPUSD</td><td>Buy</td><td>0.10</td><td>1.2910</td><td>1.2888</td><td class="negative">−$32.10</td></tr><tr><td>USDJPY</td><td>Buy</td><td>0.05</td><td>149.20</td><td>149.65</td><td class="positive">+$61.40</td></tr></tbody></table></div></article>
+      </section>
+
+      <section class="page" id="page-payments">
+        <div class="page-heading"><div><p class="eyebrow">TRANSACTIONS</p><h1>Payments</h1><p class="muted">Review challenge purchases and payment history.</p></div></div>
+        <div class="stats-grid three-stats"><article class="stat-card"><div class="stat-top"><span>Total paid</span><span class="stat-icon blue">＄</span></div><h2>$99.00</h2><p class="muted-small">Across 1 challenge</p></article><article class="stat-card"><div class="stat-top"><span>Pending payments</span><span class="stat-icon orange">◷</span></div><h2>$0.00</h2><p class="muted-small">No pending transactions</p></article><article class="stat-card"><div class="stat-top"><span>Refund status</span><span class="stat-icon green">✓</span></div><h2>—</h2><p class="muted-small">Check the firm's terms</p></article></div>
+        <article class="panel"><div class="panel-heading"><div><h3>Payment history</h3><p class="muted">Example transactions shown for layout demonstration.</p></div><button class="outline-button" id="paymentHelp">Payment help</button></div><div class="table-scroll"><table><thead><tr><th>Reference</th><th>Description</th><th>Date</th><th>Amount</th><th>Status</th></tr></thead><tbody><tr><td>TF-10284</td><td>Pro challenge fee</td><td>Oct 26, 2026</td><td>$99.00</td><td><span class="status-pill status-green">Paid</span></td></tr></tbody></table></div></article>
+      </section>
+
+      <section class="page" id="page-rules">
+        <div class="page-heading"><div><p class="eyebrow">TRADE WITH DISCIPLINE</p><h1>Rules & requirements</h1><p class="muted">Understand the evaluation criteria before trading.</p></div></div>
+        <div class="rules-layout"><div class="rules-list">
+          <article class="rule-card"><div class="rule-icon">◎</div><div><h3>Profit target</h3><p>Reach the required profit target without violating any other challenge rule.</p></div><strong>8%</strong></article>
+          <article class="rule-card"><div class="rule-icon">↘</div><div><h3>Daily loss limit</h3><p>Keep daily losses within the maximum permitted threshold, including any defined equity rules.</p></div><strong>5%</strong></article>
+          <article class="rule-card"><div class="rule-icon">⌁</div><div><h3>Maximum drawdown</h3><p>Your account must remain above the firm's overall drawdown threshold.</p></div><strong>10%</strong></article>
+          <article class="rule-card"><div class="rule-icon">▦</div><div><h3>Minimum trading days</h3><p>Trade on the minimum number of separate eligible days required by the challenge.</p></div><strong>5 days</strong></article>
+          <article class="rule-card"><div class="rule-icon">⚑</div><div><h3>Responsible trading</h3><p>Follow the firm's prohibited-strategy, account-sharing, and risk-management policies.</p></div><strong>Required</strong></article>
+        </div><aside class="panel rule-callout"><div class="callout-symbol">!</div><h3>One rule breach can end a challenge</h3><p class="muted">Review the full terms, how losses are calculated, and when daily limits reset. Exact rules must be configured by the firm.</p><button class="outline-button full-button" id="rulesAck">I understand the rules</button></aside></div>
+      </section>
+
+      <section class="page" id="page-profile">
+        <div class="page-heading"><div><p class="eyebrow">PERSONAL DETAILS</p><h1>My profile</h1><p class="muted">A sample account profile for the prototype.</p></div></div>
+        <article class="panel profile-panel"><div class="profile-avatar">JD</div><div class="profile-details"><h3>John Doe</h3><p class="muted">john.doe@example.com</p><span class="status-pill status-green">Email verified (demo)</span></div><div class="profile-fields"><label>Full name<input value="John Doe" /></label><label>Email address<input value="john.doe@example.com" type="email" /></label><label>Phone number<input value="+254 700 000 000" /></label><button class="primary-button" id="saveProfile">Save changes</button></div></article>
+      </section>
+
+      <section class="page" id="page-support">
+        <div class="page-heading"><div><p class="eyebrow">WE'RE HERE TO HELP</p><h1>Help & support</h1><p class="muted">Find help with challenges, payments, and account rules.</p></div></div>
+        <div class="support-grid"><article class="panel"><div class="support-icon">✉</div><h3>Email support</h3><p class="muted">For account or payment questions, contact the firm's support team.</p><button class="outline-button" id="emailSupport">Contact support</button></article><article class="panel"><div class="support-icon">◌</div><h3>WhatsApp support</h3><p class="muted">Add the firm's official WhatsApp Business number here after it is provided.</p><button class="primary-button" id="whatsappSupport">WhatsApp support</button></article><article class="panel"><div class="support-icon">✓</div><h3>Challenge rules</h3><p class="muted">Review profit targets, drawdown, and trading day requirements.</p><button class="outline-button" data-goto="rules">Read the rules</button></article></div>
+      </section>
+
+      <footer class="footer"><span>© 2026 TradeFund · UI prototype</span><span>Secure concept • Not connected to a broker or payment gateway</span></footer>
+    </main>
+  </div>
+
+  <div class="modal-backdrop" id="modalBackdrop" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+    <div class="modal">
+      <button class="modal-close" id="modalClose" aria-label="Close">×</button>
+      <div class="modal-symbol">↗</div><p class="eyebrow">CHALLENGE CHECKOUT</p><h2 id="modalTitle">Confirm your challenge</h2><p class="muted" id="modalDescription">Review your selection before continuing.</p>
+      <div class="checkout-line"><span>Selected plan</span><strong id="selectedPlan">Pro</strong></div>
+      <div class="checkout-line"><span>Challenge fee</span><strong id="selectedFee">$99</strong></div>
+      <div class="checkout-line"><span>Payment status</span><span class="status-pill status-orange">Demo only</span></div>
+      <div class="modal-warning">This prototype does not collect money or create a real trading account.</div>
+      <button class="primary-button full-button" id="confirmChallenge">Confirm demo selection</button>
+      <button class="text-button full-button" id="cancelChallenge">Cancel</button>
+    </div>
+  </div>
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+  <script src="script.js"></script>
+</body>
+</html>
